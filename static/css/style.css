@@ -1,0 +1,349 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #DBD9DB;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    flex: 1; /* Take up remaining space */
+    max-width: 600px;
+    margin: 50px 0 0 150px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+.column {
+    margin-bottom: 20px; /* Add bottom margin to each column */
+}
+
+label {
+    display: block; /* Make labels behave like block elements */
+    margin-bottom: 5px; /* Add bottom margin to labels */
+}
+
+input[type="file"] {
+    width: 100%; /* Make input fields take up full width of their container */
+    padding: 10px; /* Add padding to input fields */
+    border: 1px solid #ccc; /* Add border to input fields */
+    border-radius: 5px; /* Add border radius to input fields */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+button[type="submit"] {
+    display: block; /* Make the button behave like a block element */
+    width: 100%; /* Make the button take up full width of its container */
+    background-color: #747572;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #747572;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Preview Content (iframe) */
+.preview-content {
+    width: 100%;
+    height: 500px; /* Set a specific height for the iframe */
+    border: none;
+    overflow: auto;
+    background-color: #fff; /* White background for iframe */
+}
+/* Preview Button */
+button.preview-button {
+    background-color:#747572; ;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    margin:10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add smooth transition effect */
+}
+
+button.preview-button:hover {
+    background-color: #454842; /* Darker blue color on hover */
+}
+
+
+p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+
+.card-wrapper {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top:100px;
+}
+
+.card {
+  perspective: 800px;
+}
+
+.frame {
+  border: 10px solid#333;
+  border-radius: 5px;
+  transform-style: preserve-3d;
+  transform: rotateY(-40deg);
+  transition: all 0.4s;
+}
+
+.content {
+  width: 400px;
+  height: 200px;
+  background-color: rgb(255, 201, 25, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(60deg) rotateX(20deg);
+  border-radius: 5px;
+  transition: all 0.4s;
+  margin-top:50px;
+}
+
+.card:hover .frame {
+  transform: rotateY(0);
+}
+
+.card:hover .content {
+  transform: rotateY(0) rotateX(0);
+  border-radius: 0;
+}
+
+.heading {
+  font-family: "Cantarell", sans-serif;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.heading span {
+  background-color: #333;
+  color: #fff;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 80vh; /* 100% of the viewport height */
+    overflow: hidden;
+}
+/* Results.html */
+.container_result {
+    max-width: 600px;
+    margin: 50px 0px; /* Center the container horizontally with top and bottom margin */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.score {
+        font-size: 24px;
+        font-weight: bold;
+        color: #007bff;
+}
+
+.explanation {
+        font-style: normal;
+ }
+
+.score-circle {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #007bff;
+            margin: 0 5px;
+}
+
+
+/* results.css side one */
+.horizontal-container {
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Align items vertically in the center */
+}
+
+.wrapper {
+  width: 40rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  perspective: 100rem;
+  perspective-origin: 76% 27%;
+  margin-left:60px;
+
+}
+
+.circle {
+  position: absolute;
+  width: 40rem;
+  aspect-ratio: 1;
+  border: 0.1rem dashed #0ff;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+}
+
+.circle-1 {
+  transform: rotateY(70deg) rotateX(40deg);
+  animation: circle1Anim 2s -1s infinite linear;
+}
+
+@keyframes circle1Anim {
+  0% {
+    transform: rotateY(70deg) rotateX(40deg);
+  }
+
+  100% {
+    transform: rotateY(70deg) rotateX(40deg) rotateZ(360deg);
+  }
+}
+
+.circle-2 {
+  transform: rotateY(70deg) rotateX(-40deg);
+  animation: circle2Anim 2s infinite linear;
+}
+
+@keyframes circle2Anim {
+  0% {
+    transform: rotateY(70deg) rotateX(-40deg);
+  }
+
+  100% {
+    transform: rotateY(70deg) rotateX(-40deg) rotateZ(360deg);
+  }
+}
+
+.circle-3 {
+  transform: rotateY(180deg) rotateX(90deg);
+  animation: circle3Anim 2s infinite linear;
+}
+
+@keyframes circle3Anim {
+  0% {
+    transform: rotateY(180deg) rotateX(90deg);
+  }
+
+  100% {
+    transform: rotateY(180deg) rotateX(90deg) rotateZ(360deg);
+  }
+}
+
+.circle-3::before {
+  content: "";
+  width: 12rem;
+  aspect-ratio: 1;
+  background-image: radial-gradient(rgb(255, 255, 255), 50%, rgb(55, 132, 146));
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotateX(90deg);
+  border-radius: 50%;
+  animation: mainBallAnim 2s infinite linear;
+}
+
+@keyframes mainBallAnim {
+  0% {
+    transform: translate(-50%, -50%) rotateX(90deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotateX(90deg) rotateY(-360deg);
+  }
+}
+
+.ball {
+  width: 6rem;
+  aspect-ratio: 1;
+  background-image: radial-gradient(rgb(135, 214, 240), 70%, rgb(44, 44, 167));
+  border-radius: 50%;
+  position: absolute;
+  top: -3rem;
+  left: calc(50% - 3rem);
+}
+
+.ball-1,
+.ball-2 {
+  transform: rotateY(-90deg);
+  animation: ballAnim 2s infinite linear;
+}
+
+@keyframes ballAnim {
+  0% {
+    transform: rotateY(-90deg);
+  }
+
+  100% {
+    transform: rotateY(-90deg) rotateX(-360deg);
+  }
+}
+
+.ball-3 {
+  transform: rotateY(90deg) rotateX(90deg);
+  animation: ball3Anim 2s infinite linear;
+}
+
+@keyframes ball3Anim {
+  0% {
+    transform: rotateY(90deg) rotateX(90deg);
+  }
+
+  100% {
+    transform: rotateY(90deg) rotateX(450deg);
+  }
+}

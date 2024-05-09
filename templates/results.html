@@ -1,0 +1,37 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="horizontal-container">
+     <div class="wrapper">
+      <div class="circle circle-1">
+        <div class="ball ball-1"></div>
+      </div>
+      <div class="circle circle-2">
+        <div class="ball ball-2"></div>
+      </div>
+      <div class="circle circle-3">
+        <div class="ball ball-3"></div>
+      </div>
+
+    </div>
+     <div class="container_result">
+        <h1>Result</h1>
+        <h2>Similarity Score</h2>
+         <div class="score">
+            {% for i in range(1, 11) %}
+                <div class="score-circle" style="opacity: {{ 1 if score >= i else 0.1 }}"></div>
+            {% endfor %}
+        </div>
+         <h2>Feedback</h2>
+        <p class="explanation">Explanation: {{ explanation }}</p>
+    </div>
+</div>
+</body>
+</html>
