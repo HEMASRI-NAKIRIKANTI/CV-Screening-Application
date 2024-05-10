@@ -219,7 +219,7 @@ p {
     align-items: center; /* Align items vertically in the center */
 }
 
-.wrapper {
+.wrapper_result {
   width: 40rem;
   aspect-ratio: 1;
   display: grid;

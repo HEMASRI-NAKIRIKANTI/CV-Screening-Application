@@ -15,32 +15,34 @@
 </head>
 <body>
 <!--    <h1>AI CV Screening System</h1>-->
-    <div class="wrapper">
-    <div class="container">
-        <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm" onsubmit="submitForm(event)">
-            <div class="column">
-                <label for="cv">Upload Candidate's CV:</label>
-                <input type="file" id="cv" name="cv" accept=".pdf,.docx">
-                <button type="button" class="preview-button" onclick="previewFileContent('cv')">Preview</button>
+        <div class="wrapper">
+        <div class="container">
+            <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm" onsubmit="submitForm(event)">
+                <div class="column">
+                    <label for="cv">Upload Candidate's CV:</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf,.docx">
+                    <button type="button" class="preview-button" onclick="previewFileContent('cv')">Preview</button>
+                </div>
+                <div class="column">
+                    <label for="jobDescription">Upload Job Description:</label>
+                    <input type="file" id="jobDescription" name="jobDescription" accept=".pdf,.docx">
+                    <button type="button" class="preview-button" onclick="previewFileContent('jobDescription')">Preview</button>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="card-wrapper">
+          <div class="card">
+            <div class="frame">
+              <div class="content">
+                <h1 class="heading"><span></span> Screening System</h1>
+              </div>
             </div>
-            <div class="column">
-                <label for="jobDescription">Upload Job Description:</label>
-                <input type="file" id="jobDescription" name="jobDescription" accept=".pdf,.docx">
-                <button type="button" class="preview-button" onclick="previewFileContent('jobDescription')">Preview</button>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-    <div class="card-wrapper">
-      <div class="card">
-        <div class="frame">
-          <div class="content">
-            <h1 class="heading"><span></span> Screening System</h1>
           </div>
         </div>
-      </div>
-    </div>
-    </div>
+
+        </div>
     <script>
         function previewFileContent(inputId) {
             const fileInput = document.getElementById(inputId);
