@@ -81,12 +81,12 @@ def calculate_similarity(cv_text_preprocessed, job_desc_text_preprocessed):
 
     return similarity_score
 
-@app.route('/')
+@app.route('/',methods=['GET','POST'])
 @cross_origin()
 def home():
     return render_template('index.html')
 
-@app.route('/upload', methods=['POST'])
+@app.route('/upload', methods=['GET','POST'])
 @cross_origin()
 def upload():
     # Handle file uploads and process them
