@@ -16,6 +16,7 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 
 app = Flask(__name__,static_url_path='/static')
+app.config['UPLOAD_FOLDER'] = 'uploads'
 
 # Set your OpenAI API key
 import os
@@ -32,7 +33,17 @@ def extract_text_from_docx(docx_file):
     result = mammoth.extract_raw_text(docx_file)
     return result.value
 
-def extract_text_from_txt(txt_file):
+
+def extract_text_from_txt(file):
+    # Ensure the UPLOAD_FOLDER exists
+    if not os.path.exists(app.config['UPLOAD_FOLDER']):
+        os.makedirs(app.config['UPLOAD_FOLDER'])
+
+    # Save the uploaded file to the UPLOAD_FOLDER
+    txt_file = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+    file.save(txt_file)
+
+    # Now, extract text from the saved file
     with open(txt_file, 'r', encoding='utf-8') as file:
         text = file.read()
     return text
@@ -113,8 +124,9 @@ def upload():
     elif job_desc_file.filename.endswith('.docx'):
         job_desc_text = extract_text_from_docx(job_desc_file)
     elif job_desc_file.filename.endswith('.txt'):
+        # Save the file to a temporary location
         job_desc_text = extract_text_from_txt(job_desc_file)
-    # print(job_desc_text)
+    print(job_desc_text)
 
     # Preprocess CV text
     cv_text_preprocessed = preprocess_text(cv_text)
@@ -137,7 +149,7 @@ def upload():
     # Make a request to OpenAI API
     llm = OpenAI(model_name="gpt-3.5-turbo-instruct")
     completion = llm.invoke(prompt)
-    # print(completion)
+    print(completion)
 
     return render_template('results.html', score=similarity_score, explanation=completion)
 

@@ -1,0 +1,17 @@
+About the job
+We are looking for a talented Machine Learning Engineer to develop and deploy machine learning models that drive insights and innovation in our products. As a Machine Learning Engineer, you will work with large datasets, algorithms, and tools to create predictive models and optimize system performance.
+
+Responsibilities:
+· Develop and deploy machine learning models for predictive analytics and data-driven insights.
+· Collaborate with data scientists and software engineers to integrate machine learning solutions into applications.
+· Preprocess and analyze large datasets to extract meaningful patterns and features.
+· Evaluate and optimize model performance using techniques such as cross-validation and hyperparameter tuning.
+· Stay updated on advancements in machine learning algorithms and technologies.
+
+Qualifications:
+· Proficiency in Python and machine learning libraries (e.g., TensorFlow, PyTorch, scikit-learn).
+· Experience with data preprocessing and feature engineering techniques.
+· Strong understanding of machine learning algorithms and statistical concepts.
+· Experience with cloud platforms and services for ML model deployment (e.g., AWS SageMaker, Google Cloud AI Platform).
+· Master's or Ph.D. in Computer Science, Machine Learning, or related field.
+How you match
