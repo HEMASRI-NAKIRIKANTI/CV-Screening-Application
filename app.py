@@ -20,8 +20,8 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 
 # Set your OpenAI API key
 import os
-os.environ["OPENAI_API_KEY"] = 'sk-proj-d0aTu5c89wRMLAOk9WklT3BlbkFJ454ljJvjWZM39EPqV6W5'
-# openai.api_key = 'sk-proj-d0aTu5c89wRMLAOk9WklT3BlbkFJ454ljJvjWZM39EPqV6W5'
+os.environ["OPENAI_API_KEY"] = 'YOUR API_KEY'
+# openai.api_key = ''
 def extract_text_from_pdf(pdf_file):
     with pdfplumber.open(pdf_file) as pdf:
         text = ''
